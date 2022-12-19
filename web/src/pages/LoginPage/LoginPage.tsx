@@ -131,11 +131,11 @@ const LoginPage = () => {
                         </div>
                     </div>
                     {/* <div className="rw-login-link">
-            <span>Don&apos;t have an account?</span>{' '}
-            <Link to={routes.signup()} className="rw-link">
-              Sign up!
-            </Link>
-          </div> */}
+                        <span>Don&apos;t have an account?</span>{' '}
+                        <Link to={routes.signup()} className="rw-link">
+                            Sign up!
+                        </Link>
+                    </div> */}
                 </div>
             </main>
         </>

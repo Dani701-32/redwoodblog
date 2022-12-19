@@ -1,10 +1,6 @@
 import type { Post } from 'types/graphql'
 
 import { Link, routes } from '@redwoodjs/router'
-
-interface Props {
-    article: Post
-}
 const truncate = (text: string, length: number) => {
     return text.substring(0, length) + '...'
 }
@@ -24,9 +20,6 @@ const Article = ({ article, summary = false }: Props) => {
             </header>
             <div className="mt-2 font-light text-gray-900">
                 {summary ? truncate(article.body, 100) : article.body}
-            </div>
-            <div className="mt-3 text-sm font-light text-gray-500">
-                Posted at: {article.createdAt}
             </div>
         </article>
     )
