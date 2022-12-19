@@ -5,7 +5,14 @@ import { Link, routes } from '@redwoodjs/router'
 interface Props {
     article: Post
 }
-const Article = ({ article }: Props) => {
+const truncate = (text: string, length: number) => {
+    return text.substring(0, length) + '...'
+}
+interface Props {
+    article: Omit<Post, 'createdAt'>
+    summary?: boolean
+}
+const Article = ({ article, summary = false }: Props) => {
     return (
         <article key={article.id}>
             <header>
@@ -15,7 +22,9 @@ const Article = ({ article }: Props) => {
                     </Link>
                 </h2>
             </header>
-            <div className="mt-2 font-light text-gray-900">{article.body}</div>
+            <div className="mt-2 font-light text-gray-900">
+                {summary ? truncate(article.body, 100) : article.body}
+            </div>
             <div className="mt-3 text-sm font-light text-gray-500">
                 Posted at: {article.createdAt}
             </div>
