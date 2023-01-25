@@ -16,7 +16,9 @@ export const QUERY = gql`
 
 export const Loading = () => <div>Loading...</div>
 
-export const Empty = () => <div>Empty</div>
+export const Empty = () => (
+    <div className="text-center text-gray-500">No comments yet</div>
+)
 
 export const Failure = ({ error }: CellFailureProps) => (
     <div style={{ color: 'red' }}>Error: {error?.message}</div>
